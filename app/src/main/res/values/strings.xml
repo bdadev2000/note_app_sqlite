@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">NoteAppSQLite</string>
+    <string name="enter_title">Enter title</string>
+    <string name="enter_content">Enter content</string>
+    <string name="title_and_content_is_require">Title and content is require</string>
+    <string name="success">Success</string>
+    <string name="data_error">Data error</string>
+</resources>
