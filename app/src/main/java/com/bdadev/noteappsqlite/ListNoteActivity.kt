@@ -3,6 +3,7 @@ package com.bdadev.noteappsqlite
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bdadev.noteappsqlite.adapter.NoteAdapter
@@ -31,6 +32,11 @@ class ListNoteActivity : AppCompatActivity() {
         noteDatabaseManager = NoteDatabaseManager(this)
         try {
             listNote.addAll(noteDatabaseManager.fetchNote())
+            if(listNote.isEmpty()){
+                binding.imgEmptyNote.visibility = View.VISIBLE
+            }else{
+                binding.imgEmptyNote.visibility = View.GONE
+            }
         } catch (_: java.lang.Exception) {
             Toast.makeText(this@ListNoteActivity, R.string.data_error, Toast.LENGTH_SHORT).show()
         }
